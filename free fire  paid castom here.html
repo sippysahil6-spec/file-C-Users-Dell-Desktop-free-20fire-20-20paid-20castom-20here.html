@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WZADEXE Free Fire Tournament</title>
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+body{
+background:url('freefire-bg.jpg') center center/cover no-repeat fixed;
+color:white;
+min-height:100vh;
+}
+.overlay{
+background:rgba(0,0,0,0.75);
+min-height:100vh;
+padding:20px;
+}
+.header{
+text-align:center;
+padding:20px;
+}
+.logo{
+font-size:50px;
+font-weight:bold;
+color:#00e5ff;
+text-shadow:0 0 20px #00e5ff;
+}
+.subtitle{
+font-size:22px;
+color:#ffcc00;
+margin-top:10px;
+}
+.container{
+max-width:1000px;
+margin:auto;
+}
+.card{
+background:rgba(255,255,255,0.08);
+backdrop-filter:blur(12px);
+border-radius:20px;
+padding:20px;
+margin-top:20px;
+box-shadow:0 0 20px rgba(0,255,255,0.4);
+}
+.player-card{
+width:100%;
+border-radius:15px;
+margin-bottom:15px;
+}
+h2{
+color:#00e5ff;
+margin-bottom:15px;
+}
+.info{
+font-size:18px;
+line-height:35px;
+}
+input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+font-size:16px;
+}
+button{
+width:100%;
+padding:15px;
+background:#00e5ff;
+border:none;
+border-radius:10px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+button:hover{
+transform:scale(1.03);
+}
+.qr{
+width:300px;
+max-width:100%;
+border-radius:15px;
+margin-top:10px;
+}
+.timer{
+font-size:32px;
+font-weight:bold;
+color:#00ff88;
+margin-top:15px;
+}
+.rules li{
+margin:10px 0;
+}
+.links{
+display:flex;
+gap:10px;
+margin-top:20px;
+}
+.links a{
+flex:1;
+text-decoration:none;
+}
+.footer{
+text-align:center;
+margin-top:30px;
+padding:20px;
+color:#ccc;
+}
+</style>
+</head>
+<body>
+<div class="overlay">
+<div class="header">
+<div class="logo">WZADEXE</div>
+<div class="subtitle">🔥 FREE FIRE MAX TOURNAMENT 🔥</div>
+</div>
+<div class="container">
+<div class="card">
+<img src="freefire-player.jpg" class="player-card">
+<h2>🏆 Tournament Details</h2>
+<div class="info">
+💰 Entry Fee: ₹120 Per Person<br>
+🥇 Winning Prize: ₹900<br>
+🎮 Mode: Squad Battle<br>
+📱 WhatsApp: 9015016442<br>
+⚡ Limited Slots Available<br>
+</div>
+</div>
+<div class="card">
+<h2>📝 Registration Form</h2>
+<form id="registerForm">
+<input type="text" placeholder="Player Name" required>
+<input type="text" placeholder="Free Fire UID" required>
+<input type="text" placeholder="Team Name" required>
+<input type="tel" placeholder="WhatsApp Number" required>
+<button type="submit">REGISTER NOW</button>
+</form>
+</div>
+<div class="card">
+<h2>💳 Scan QR & Pay</h2>
+<img src="payment-qr.jpg" class="qr">
+<p style="margin-top:15px;">
+UPI ID: 9015016442@pthdfc
+</p>
+<div class="timer" id="timer">
+02:00
+</div>
+</div>
+<div class="card">
+<h2>🎁 Special Offers</h2>
+<ul class="rules">
+<li>🔥 First 10 registrations get priority slot.</li>
+<li>🎮 Refer friends and get special benefits.</li>
+<li>🏆 MVP Player gets Instagram Feature.</li>
+<li>⚡ Fast payment gets quick confirmation.</li>
+<li>💎 Weekly Champion Special Reward.</li>
+<li>🎁 Lucky Draw For Registered Players.</li>
+</ul>
+</div>
+<div class="card">
+<h2>💰 Prize List</h2>
+<p>🥇 1st Place Team - ₹900</p>
+<p>🥈 2nd Place Team - Free Entry Next Match</p>
+<p>🏅 MVP Player - Special Mention</p>
+</div>
+<div class="card">
+<h2>📜 Tournament Rules</h2>
+<ul class="rules">
+<li>No Hacks or Cheats Allowed.</li>
+<li>Only Registered Players Can Join.</li>
+<li>Room ID & Password Shared Before Match.</li>
+<li>Organizer Decision Is Final.</li>
+<li>No Refund After Slot Confirmation.</li>
+</ul>
+</div>
+<div class="links">
+<a href="https://wa.me/919015016442">
+<button>📱 WhatsApp</button>
+</a>
+<a href="https://instagram.com/wzadexe">
+<button>📸 Instagram</button>
+</a>
+</div>
+<div class="footer">
+© 2026 WZADEXE Tournament
+</div>
+</div>
+</div>
+<script>
+let time = 120;
+let timer = setInterval(() => {
+let minutes = Math.floor(time / 60);
+let seconds = time % 60;
+document.getElementById("timer").innerHTML =
+`${minutes}:${seconds < 10 ? "0" : ""}${seconds}`;
+time--;
+if(time < 0){
+clearInterval(timer);
+document.getElementById("timer").innerHTML =
+"PAYMENT TIME EXPIRED";
+}
+},1000);
+document.getElementById("registerForm")
+.addEventListener("submit", function(e){
+e.preventDefault();
+alert(
+"Registration Successful! Please scan QR and complete payment."
+);
+});
+</script>
+</body>
+</html>
